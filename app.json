@@ -1,0 +1,10 @@
+{
+  "expo": {
+    "name": "registeruserabfbitrise",
+    "slug": "registeruserabfbitrise",
+    "version": "1.0.0",
+    "assetBundlePatterns": [
+      "**/*"
+    ]
+  }
+}
