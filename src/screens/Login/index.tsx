@@ -4,12 +4,19 @@ import { useNavigation } from "@react-navigation/native";
 import { Input, Icon, Text, Button } from "react-native-magnus";
 
 import { Container, Main, ContainerMain } from "./styles";
+import { useDispatch, useSelector } from "react-redux";
+
+import * as reducerExemplo from "../../store/modules/actions";
 
 const Login = () => {
   const navigation = useNavigation();
+  const dispatch = useDispatch();
+  const botaoClicado = useSelector(state => state.example.botaoClicado);
 
   const loginHome = () => {
-    navigation.navigate("LoginRegister");
+    dispatch(reducerExemplo.clicaBotaoRequest());
+
+    //navigation.navigate("LoginRegister");
   };
 
   return (
@@ -17,7 +24,7 @@ const Login = () => {
       <Main>
         <ContainerMain>
           <Text fontWeight="bold" fontSize="4xl" mt="md" textAlign="center">
-            Login
+            {botaoClicado ? "Clicado" : "Não Clicado"}
           </Text>
           <Input
             placeholder="E-mail"
