@@ -8,7 +8,12 @@ export const Container = styled.SafeAreaView`
 
 export const Main = styled.ScrollView``;
 
-export const ContainerMain = styled.View`padding: 20px;`;
+export const ContainerButtonGoogleApple = styled.View`flex-direction: row;`;
+
+export const ContainerMain = styled.View`
+  align-items: center;
+  padding: 20px;
+`;
 
 export const Text = styled.Text`
   font-weight: 700;
