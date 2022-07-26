@@ -1,0 +1,47 @@
+{
+  "project_info": {
+    "project_number": "423137200916",
+    "project_id": "registeruserbitrise",
+    "storage_bucket": "registeruserbitrise.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:423137200916:android:37a9a644a72c501ac05001",
+        "android_client_info": {
+          "package_name": "com.registeruserabfbitrise"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "423137200916-7t9qrs40befh8d82ii410gp0o3d3p5vt.apps.googleusercontent.com",
+          "client_type": 1,
+          "android_info": {
+            "package_name": "com.registeruserabfbitrise",
+            "certificate_hash": "421dde0e4437edbf2869f58970ae755be8a358f3"
+          }
+        },
+        {
+          "client_id": "423137200916-a28eqmm62fh79vi7kpoifc1hr150kja0.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyDW9y-4MGD1HD3BDbkpE3rDe4dwAs0X_X4"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "423137200916-a28eqmm62fh79vi7kpoifc1hr150kja0.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}

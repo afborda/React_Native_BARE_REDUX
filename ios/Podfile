@@ -12,6 +12,10 @@ install! 'cocoapods',
 target 'registeruserabfbitrise' do
   use_expo_modules!
   config = use_native_modules!
+    pod 'Firebase', :modular_headers => true
+     pod 'FirebaseCore', :modular_headers => true
+     pod 'GoogleUtilities', :modular_headers => true
+     $RNFirebaseAsStaticFramework = true
 
   use_frameworks! :linkage => podfile_properties['ios.useFrameworks'].to_sym if podfile_properties['ios.useFrameworks']
 
@@ -30,7 +34,7 @@ target 'registeruserabfbitrise' do
   # Note that if you have use_frameworks! enabled, Flipper will not work
   #
   # if !ENV['CI']
-  #   use_flipper!()
+     use_flipper!()
   # end
 
   post_install do |installer|

@@ -13,6 +13,7 @@ import {
 import { useDispatch, useSelector } from "react-redux";
 
 import * as reducerExemplo from "../../store/modules/actions";
+import { LOGIN_REGISTER } from "@router/typeRoutes";
 
 const Login = () => {
   const navigation = useNavigation();
@@ -20,10 +21,10 @@ const Login = () => {
   const botaoClicado = useSelector(state => state.example.botaoClicado);
   const animation = useRef(null);
 
-  const loginHome = () => {
+  const handleRegisterUser = () => {
     dispatch(reducerExemplo.clicaBotaoRequest());
 
-    //navigation.navigate("LoginRegister");
+    navigation.navigate(LOGIN_REGISTER);
   };
 
   return (
@@ -33,13 +34,11 @@ const Login = () => {
           <LottieView
             autoPlay
             ref={animation}
-            style={{ width: 200, height: 200 }}
+            style={{ width: 300, height: 300 }}
             source={require("../../assets/json/register.json") // Find more Lottie files at https://lottiefiles.com/featured
             }
           />
-          <Text fontWeight="bold" fontSize="4xl" mt="md" textAlign="center">
-            {botaoClicado ? "Clicado" : "Não Clicado"}
-          </Text>
+
           <Input
             placeholder="E-mail"
             p={10}
@@ -95,6 +94,7 @@ const Login = () => {
               bg="black"
               h={50}
               w={50}
+              mr={20}
               rounded="circle"
               mt="lg"
               suffix={
@@ -102,6 +102,22 @@ const Login = () => {
                   name="social-apple"
                   color="#fff"
                   fontFamily="Foundation"
+                  fontSize={25}
+                />
+              }
+            />
+            <Button
+              onPress={handleRegisterUser}
+              bg="orange"
+              h={50}
+              w={50}
+              rounded="circle"
+              mt="lg"
+              suffix={
+                <Icon
+                  name="user-plus"
+                  color="#fff"
+                  fontFamily="FontAwesome"
                   fontSize={25}
                 />
               }

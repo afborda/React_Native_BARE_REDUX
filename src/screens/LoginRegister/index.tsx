@@ -1,3 +1,4 @@
+import HeaderComponent from "@components/Header";
 import React from "react";
 import { View, Text } from "react-native";
 import { useSelector } from "react-redux";
@@ -9,6 +10,7 @@ const LoginRegister = () => {
 
   return (
     <Container>
+      <HeaderComponent title="Registar" />
       <Text>Register</Text>
       <Text>
         {botaoClicado ? "Clicado" : "Não Clicado"}
