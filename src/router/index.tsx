@@ -4,7 +4,7 @@ import OpenRoute from "./openRoute";
 import AuthRoute from "./authRoute";
 
 const RouteBase = () => {
-  const user = false;
+  const user = true;
   return (
     <NavigationContainer>
       {user ? <AuthRoute /> : <OpenRoute />}

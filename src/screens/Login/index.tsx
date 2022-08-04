@@ -11,18 +11,19 @@ import {
   ContainerButtonGoogleApple
 } from "./styles";
 import { useDispatch, useSelector } from "react-redux";
+import LottieLogin from "../../assets/json/register.json";
 
 import * as reducerExemplo from "../../store/modules/actions";
 import { LOGIN_REGISTER } from "@router/typeRoutes";
+import Lottie from "@components/Lottie";
 
 const Login = () => {
   const navigation = useNavigation();
-  const dispatch = useDispatch();
-  const botaoClicado = useSelector(state => state.example.botaoClicado);
+  // const dispatch = useDispatch();
   const animation = useRef(null);
 
   const handleRegisterUser = () => {
-    dispatch(reducerExemplo.clicaBotaoRequest());
+    // dispatch(reducerExemplo.clicaBotaoRequest());
 
     navigation.navigate(LOGIN_REGISTER);
   };
@@ -31,13 +32,7 @@ const Login = () => {
     <Container>
       <Main>
         <ContainerMain>
-          <LottieView
-            autoPlay
-            ref={animation}
-            style={{ width: 300, height: 300 }}
-            source={require("../../assets/json/register.json") // Find more Lottie files at https://lottiefiles.com/featured
-            }
-          />
+          <Lottie autoPlay={true} w={300} h={300} path={LottieLogin} />
 
           <Input
             placeholder="E-mail"
