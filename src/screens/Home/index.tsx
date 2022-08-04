@@ -9,9 +9,6 @@ const Home = () => {
   const [name, setName] = useState<string>();
   const [address, setAddres] = useState<string>();
 
-  console.log("name", name);
-  console.log("address", address);
-
   const handleRegiserUser = () => {
     const data = {
       name: name,
