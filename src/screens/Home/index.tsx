@@ -1,23 +1,42 @@
-import { TouchableOpacity } from "react-native";
-import { Container, Text, Main, ContainerMain } from "./styles";
+import React, { useState } from "react";
+import { TouchableOpacity, Alert } from "react-native";
 import { useNavigation } from "@react-navigation/native";
-import { REGISTER_USER } from "@router/typeRoutes";
 import { Button, Icon, Input } from "react-native-magnus";
-import { useState } from "react";
+import firestore from '@react-native-firebase/firestore';
+
+
+import { Container, Text, Main, ContainerMain } from "./styles";
+import { REGISTER_USER } from "@router/typeRoutes";
+
 const Home = () => {
   const navigation = useNavigation();
   const [name, setName] = useState<string>();
-  const [address, setAddres] = useState<string>();
+  const [addres, setAddres] = useState<string>();
 
   const handleRegiserUser = () => {
-    const data = {
-      name: name,
-      address: address
-    };
+    if (name && addres ) {
+      const data = {
+        name: name,
+        address: addres
+      };
 
-    console.log("data", data);
-
-    //navigation.navigate(REGISTER_USER);
+      firestore()
+      .collection('student')
+      .add({
+        address: addres,
+        name: name,
+        photo:"",
+        createdAt: firestore.FieldValue.serverTimestamp()
+      })
+      .then(() =>{
+        Alert.alert('Estudante Adicionado com sucesso!')
+      }).catch((error) => console.log('Erro =>', error))
+  
+      console.log("data", data);
+  
+      navigation.navigate(REGISTER_USER);
+    }
+   
   };
   return (
     <Container>
@@ -31,7 +50,7 @@ const Home = () => {
             placeholder="Nome"
             p={10}
             focusBorderColor="blue800"
-            value={address}
+            value={addres}
             onChangeText={setAddres}
             suffix={
               <Icon name="person" color="gray500" fontFamily="Ionicons" />
@@ -56,7 +75,7 @@ const Home = () => {
             rounded="circle"
             mt="lg"
             fontWeight="bold"
-            onPress={() => handleRegiserUser()}
+            onPress={ handleRegiserUser} 
           >
             Novo Aluno
           </Button>

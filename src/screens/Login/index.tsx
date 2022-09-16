@@ -1,8 +1,6 @@
 import React, { useRef } from "react";
-import { View, TouchableOpacity, StatusBar } from "react-native";
 import { useNavigation } from "@react-navigation/native";
 import { Input, Icon, Text, Button } from "react-native-magnus";
-import LottieView from "lottie-react-native";
 
 import {
   Container,
@@ -33,7 +31,6 @@ const Login = () => {
       <Main>
         <ContainerMain>
           <Lottie autoPlay={true} w={300} h={300} path={LottieLogin} />
-
           <Input
             placeholder="E-mail"
             p={10}
@@ -64,7 +61,7 @@ const Login = () => {
             rounded="circle"
             mt="lg"
             fontWeight="bold"
-            onPress={() => loginHome()}
+            onPress={() => handleRegisterUser()}
           >
             Entrar
           </Button>
